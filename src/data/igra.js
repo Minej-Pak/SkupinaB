@@ -13,7 +13,7 @@ export let delaj2 = function (msg) {
 
 class Oseba {
     constructor(name, ime) {
-        this.name = name
+        this.name = name + 's';
         this.ime = ime
     }
 }
