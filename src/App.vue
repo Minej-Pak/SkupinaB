@@ -1,11 +1,18 @@
 <template>
   <glavna-navigacija></glavna-navigacija>
-  <img alt="Vue logo" src="./assets/logo.png">
+
   <router-view></router-view>
 </template>
 
 <script>
+import navigacija from '@/components/navigacija.vue'
 
+export default {
+  name: 'App',
+  components: {
+    'glavna-navigacija': navigacija
+  }
+}
 </script>
 
 <style>
@@ -15,6 +22,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
