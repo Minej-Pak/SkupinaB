@@ -12,6 +12,9 @@
         <li>
           <router-link :to="{ name:'navigacija'} ">Navigacija</router-link>
         </li>
+        <li>
+          <router-link :to="{ name:'igra'} ">Igra</router-link>
+        </li>
       </ul>
     </nav>
   </div>
