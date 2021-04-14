@@ -14,6 +14,9 @@
         <li class="prijava">
           <router-link :to="{ name:'prijava'}">Prijava</router-link>
         </li>
+        <li class="kosarica">
+          <router-link :to="{ name:'kosarica'}">Kosarica</router-link>
+        </li>
       </ul>
     </nav>
   </div>
