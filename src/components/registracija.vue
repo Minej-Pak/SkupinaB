@@ -1,15 +1,13 @@
 <template>
-  <h3>Prijava</h3>
+  <h3>Registracija novega računa</h3>
   <div class="container">
     <form>
       <label>Uporabniško ime (E-mail) : </label>
-          <input type="email" id="email" name="email" placeholder="Vnesi uporabniško ime">
+        <input type="email" id="email" name="email" placeholder="Vnesi želeno uporabniško ime">
       <label>Geslo : </label>
-      <input type="password" id="geslo" name="geslo" placeholder="Vnesi geslo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Geslo mora vsebovati številko, eno veliko in majhno črko ter mora biti najmanj 8 mestno." required>
-      <button type="submit">Prijava</button>
-          <input type="checkbox" checked="checked"> Zapomni si me
+        <input type="password" id="geslo" name="geslo" placeholder="Vnesi geslo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Geslo mora vsebovati številko, eno veliko in majhno črko ter mora biti najmanj 8 mestno." required>
+      <button type="submit">Registracija</button>
       <button type="button" class="cancelbtn"> Prekliči</button>
-      Pozabljeno <a href="#"> geslo? </a>
     </form>
   </div>
 </template>
@@ -50,3 +48,4 @@ button:hover {
 }
 
 </style>
+

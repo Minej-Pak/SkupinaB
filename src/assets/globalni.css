@@ -42,3 +42,11 @@ nav li a:hover {
     background-color: #111;
 }
 
+.prijava {
+    float: right;
+}
+
+.registracija {
+    float: right;
+    margin-right: 50px;
+}
