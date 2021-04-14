@@ -8,7 +8,7 @@ export default class Uporabniki {
     getAll() {
         let uporabniki = this.storageObject.getItem('uporabniki');
         //mapira iz podatkovnega modela v nas model
-        this.uporabniki = JSON.parse(uporabniki);
+        this.uporabniki = JSON.parse(uporabniki).podatki;
         return this.uporabniki;
     }
 }
