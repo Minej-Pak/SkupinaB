@@ -1,55 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 body,
 html {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
-    background-color: #E3DBDB;
+    background-color: #24252A;
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
 }
 
-nav h3 {
-    margin: 40px 0 0;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-nav li {
-    float: left;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
     text-decoration: none;
 }
 
-nav li a:hover {
-    background-color: #111;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
 }
 
-.prijava {
-    float: right;
+.logo {
+    cursor: pointer;
 }
 
-.registracija {
-    float: right;
+.nav_links {
+    list-style: none;
 }
 
-.kosarica {
-    float: right;
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
 }
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #0088a9;
+}
+
+.gumba button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: rgba(0, 136, 169, 1);
+}
+
+.gumb button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+

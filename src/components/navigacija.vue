@@ -1,25 +1,23 @@
 <template>
-  <div class="hello">
-    <nav>
-      <ul>
-        <li>
-          <router-link :to="{ name:'home'} ">Domov</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name:'igra'} ">Igra</router-link>
-        </li>
-        <li class="registracija">
-          <router-link :to="{ name:'registracija'}">Registracija</router-link>
-        </li>
-        <li class="prijava">
-          <router-link :to="{ name:'prijava'}">Prijava</router-link>
-        </li>
-        <li class="kosarica">
-          <router-link :to="{ name:'kosarica'}">Kosarica</router-link>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <head>
+  </head>
+
+  <body>
+    <header>
+      <img class="logo" src='@/assets/logo.png' alt="logotip">
+      <nav>
+          <ul class="nav_links">
+              <li><router-link :to="{ name:'home'} ">Domov</router-link></li>
+              <li><router-link :to="{ name:'igra'} ">Igra</router-link></li>
+              <li><router-link :to="{ name:'kosarica'}">Kosarica</router-link></li>
+          </ul>
+      </nav>
+      <div class="gumba">
+        <a href='/prijava'><button>Prijava</button></a>
+        <a href='/registracija'><button>Registracija</button></a>
+      </div>
+    </header>
+  </body>
 </template>
 
 <style scoped>
