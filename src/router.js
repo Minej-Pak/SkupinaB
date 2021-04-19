@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import home from '@/views/Home.vue'
-import igra from '@/components/igra.vue'
 import prijava from '@/components/prijava.vue'
 import registracija from '@/components/registracija.vue'
 import cart from '@/views/Cart.vue'
@@ -8,7 +7,6 @@ import about from '@/components/About.vue'
 
 const routes = [
     { path: '/', component: home, name:'home' },
-    { path: '/igra', component: igra, name: 'igra' },
     { path: '/prijava', component: prijava, name: 'prijava' },
     { path: '/registracija', component: registracija, name: 'registracija' },
     { path: '/cart', component: cart, name: 'cart' },
