@@ -9,7 +9,7 @@
 <script>
 export default {
 computed: {
-  card_total(){
+  cart_total(){
     return this.$store.getters.cartTotal
   }
 }

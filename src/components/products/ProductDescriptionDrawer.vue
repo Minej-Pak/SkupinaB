@@ -28,7 +28,7 @@ export default {
   props: ['product', 'active'],
   computed:{
     product_total(){
-      return 56
+      return 5
     }
   }
 }
@@ -52,7 +52,7 @@ export default {
 }
 
 .drawer{
-  width: 95vh;
+  width: 95vw;
   height: 100vh;
   background-color: white;
   position: fixed;
@@ -89,13 +89,13 @@ export default {
   justify-content: center;
   flex-direction: column;
 
-
   p.description{
     padding: 20px;
     line-height: 1.5rem;
   }
   .button-container {
     button {
+      color: black;
       width: 150px;
       border: none;
       padding: 10px;
