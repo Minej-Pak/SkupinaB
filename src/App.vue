@@ -7,9 +7,6 @@
 import navigacija from '@/components/navigacija.vue'
 
 export default {
-  mounted() {
-    this.$store.commit('updateKosaricaFromLocalStorage')
-  },
   name: 'App',
   components: {
     'glavna-navigacija': navigacija
