@@ -12,8 +12,11 @@
   "dependencies": {
     "chai": "^4.3.4",
     "core-js": "^3.6.5",
+    "sass": "^1.32.10",
+    "sass-loader": "^10.1.1",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.6"
+    "vue-router": "^4.0.6",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
