@@ -18,7 +18,7 @@ getters:{
     cartItems: state => {
             return state.cart
     },
-cartTotal: state => {
+    cartTotal: state => {
             return state.cart.reduce((a,b) => a + (b.price * b.quantity), 0)
 }
 },
@@ -45,8 +45,8 @@ updateLocalStorage(state.cart)
 
             }
             updateLocalStorage(state.cart)
-},
-        updateCartFromLocalStorage(state) {
+    },
+    updateCartFromLocalStorage(state) {
     const cart = localStorage.getItem("cart")
             if (cart) {
                 state.cart = JSON.parse(cart)

@@ -10,6 +10,9 @@ export default {
   name: 'App',
   components: {
     'glavna-navigacija': navigacija
+  },
+  mounted() {
+    this.$store.commit('updateCartFromLocalStorage')
   }
 }
 </script>

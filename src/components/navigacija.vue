@@ -9,7 +9,7 @@
           <ul class="nav_links">
               <li><router-link :to="{ name:'home'} ">Domov</router-link></li>
               <li><router-link :to="{ name:'igra'} ">Igra</router-link></li>
-              <li><router-link :to="{ name:'kosarica'}">Kosarica</router-link></li>
+              <li><router-link :to="{ name:'cart'}">Kosarica</router-link></li>
               <li><router-link :to="{ name:'about'}">O Podjetju</router-link></li>
           </ul>
       </nav>

@@ -1,17 +1,27 @@
 <template>
-<div class="cart-item-card">
-<h3>Cart Total: ${{ cart_total.toFixed(2) }}</h3>
+<div>
+<h1>Your cart</h1>
 
-  <button class="view-product-button">Pay by Credit Card</button>
+  <CartItemCard
+    v-for="product in products"
+    :key="product.id"
+    :product="product" />
+<CartSummaryPaymentCard/>
 </div>
 </template>
 
 <script>
+import CartItemCard from "@/components/cart/CartItemCard.vue"
+import CartSummaryPaymentCard from "@/components/cart/CartSummaryPaymentCard.vue";
+
 export default {
-computed: {
-  cart_total(){
-    return this.$store.getters.cartTotal
+  components:{
+    CartSummaryPaymentCard, CartItemCard
+    },
+    computed:{
+      products() {
+        return this.$store.getters.cartItems
+    }
   }
-}
 }
 </script>
