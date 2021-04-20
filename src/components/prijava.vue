@@ -1,21 +1,45 @@
 <template>
   <body>
   <h1>Prijava</h1>
-    <form align="center">
-      <div class="form_container">
-        <label>E-mail: </label>
-          <input type="email" id="email" name="email" placeholder="E-mail naslov">
+  <form align="center" @submit.prevent="handleSubmit">
+    <div class="form_container">
+      <label>E-mail: </label>
+      <input type="email" v-model="email" placeholder="E-mail naslov">
 
-        <label>Geslo: </label>
-          <input type="password" id="geslo" name="geslo" placeholder="Vnesi geslo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Geslo mora vsebovati številko, eno veliko in majhno črko ter mora biti najmanj 8 mestno." required>
+      <label>Geslo: </label>
+      <input type="password" v-model="password" placeholder="Vnesi geslo" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Geslo mora vsebovati številko, eno veliko in majhno črko ter mora biti najmanj 8 mestno.">
 
-        <button type="submit">Prijava</button>
-        <input type="checkbox" checked="checked"> Zapomni si me
-        <button onclick="location.href='/';" type="button" class="cancelbtn"> Prekliči</button> Pozabljeno <a href="/obnova_gesla"> geslo? </a>
-      </div>
-    </form>
+      <button type="submit">Prijava</button>
+      <input type="checkbox" checked="checked"> Zapomni si me
+      <button onclick="location.href='/';" type="button" class="cancelbtn"> Prekliči</button> Pozabljeno <a href="/obnova_gesla"> geslo? </a>
+    </div>
+  </form>
   </body>
 </template>
+
+<script>
+
+import preveriVpisanega from "@/data/preveriPrijavo";
+
+export default {
+  name: 'prijava',
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    handleSubmit() {
+      const data = {
+        email: this.email,
+        password: this.password,
+      };
+      preveriVpisanega(data)
+    },
+  }
+}
+</script>
 
 <style scoped>
 
