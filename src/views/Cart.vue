@@ -25,3 +25,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  h1 {
+    text-align: center;
+    color:whitesmoke;
+  }
+</style>
