@@ -3,6 +3,9 @@
   <h1>Prijava</h1>
   <form align="center" @submit.prevent="handleSubmit">
     <div class="form_container">
+      <label>Uporabniško ime: </label>
+      <input type="text" v-model="username" placeholder="Uporabniško ime" autofocus>
+
       <label>E-mail: </label>
       <input type="email" v-model="email" placeholder="E-mail naslov">
 
@@ -25,6 +28,7 @@ export default {
   name: 'prijava',
   data() {
     return {
+      username: '',
       email: '',
       password: '',
     }
@@ -32,6 +36,7 @@ export default {
   methods: {
     handleSubmit() {
       const data = {
+        username: this.username,
         email: this.email,
         password: this.password,
       };

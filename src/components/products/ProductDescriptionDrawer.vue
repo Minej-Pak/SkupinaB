@@ -9,23 +9,30 @@
       <div v-if="product" class="product-details">
         <h3 class="text-center">{{ product.name }}</h3>
         <p class="description">{{ product.description }}</p>
-        <h3 class="text-center">{{ product.price.toFixed(2)}}</h3>
+        <h3 v-if="uporabnikPrijavljen" class="text-center">{{ product.price.toFixed(2)}}</h3>
         <div class="cart-total" v-if="product_total">
           <h3>In Cart</h3>
           <h4>{{ product_total }}</h4>
         </div>
 
         <div class="button-container">
-           <button class="remove" @click="removeFromCart()">Remove</button>
-           <button class="add" @click="addToCart()">Add</button>
+           <button v-if="uporabnikPrijavljen" class="remove" @click="removeFromCart()">Remove</button>
+           <button v-if="uporabnikPrijavljen" class="add" @click="addToCart()">Add</button>
         </div>
       </div>
   </div>
 </template>
 
 <script>
+
 export default {
+  emits: ['close-product-drawer'],
   props: ['product', 'active'],
+  created () {
+    if (localStorage.getItem("vpisanUporabnik") != null) {
+        this.uporabnikPrijavljen = true;
+    }
+  },
   methods:{
     addToCart(){
       this.$store.commit('addToCart', this.product)
@@ -37,6 +44,11 @@ export default {
   computed:{
     product_total(){
       return this.$store.getters.productQuantity(this.product)
+    }
+  },
+  data(){
+    return {
+      uporabnikPrijavljen: false,
     }
   }
 }

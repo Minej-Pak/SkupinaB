@@ -18,7 +18,7 @@
 
       <button type="submit">Registriraj me</button>
 
-      <!--      <button @click="clearStorage" type="submit">Ščisti storage</button>-->
+      <button @click="clearStorage" type="submit">Ščisti storage</button>
       <button  onclick="location.href='/' " type="button" class="cancelbtn"> Prekliči</button> Že obstoječ <a href="/prijava"> uporabnik? </a>
 
     </div>
@@ -37,7 +37,8 @@ export default {
       username: '',
       email: '',
       password: '',
-      password_confirm: ''
+      password_confirm: '',
+      kosarice: []
     }
   },
   methods: {
@@ -46,7 +47,8 @@ export default {
         username: this.username,
         email: this.email,
         password: this.password,
-        password_confirm: this.password_confirm
+        password_confirm: this.password_confirm,
+        kosarice: this.kosarice
       };
       preveriUporabnika(data)
     },
