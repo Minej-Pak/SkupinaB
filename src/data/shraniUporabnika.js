@@ -9,7 +9,7 @@ export default function shraniUporabnika(data) {
     if(seznamUporabnikov === null) {
         uporabniki.push(data)
         posodobiLocalStorage(uporabniki)
-        window.location.href = "/";
+        window.location.href = "/uspesnaRegistracija";
     }else {
         for (let i = 0; i <= seznamUporabnikov.length; i++) {
             if (data.username === seznamUporabnikov[i].username || data.email === seznamUporabnikov[i].email) {
@@ -17,7 +17,7 @@ export default function shraniUporabnika(data) {
             } else {
                 seznamUporabnikov.push(data)
                 posodobiLocalStorage(seznamUporabnikov)
-                window.location.href = "/";
+                window.location.href = "/uspesnaRegistracija";
             }
             return true;
         }

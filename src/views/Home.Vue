@@ -1,4 +1,5 @@
 <template>
+  <h1>Domov</h1>
 <div class="home">
   <ProductDescriptionDrawer
   :product="product"

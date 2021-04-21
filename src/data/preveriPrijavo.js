@@ -6,6 +6,7 @@ export default function preveriVpisanega(data) {
         for (let i = 0; i <= uporabniki.length; i++) {
             if (data.email === uporabniki[i].email && data.password === uporabniki[i].password) {
                 window.location.href = "/";
+                alert("Prijava je bila uspešna!")
             } else {
                 alert("Vnešeni podatki so nepravilni.")
             }

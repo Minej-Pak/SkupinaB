@@ -16,9 +16,9 @@
       <label>Ponovi geslo: </label>
       <input type="password" v-model="password_confirm"  placeholder="Ponovno vnesi geslo" required>
 
-      <button type="submit">Registracija</button>
+      <button type="submit">Registriraj me</button>
 
-      <button @click="clearStorage" type="submit">Ščisti storage</button>
+      <!--      <button @click="clearStorage" type="submit">Ščisti storage</button>-->
       <button  onclick="location.href='/' " type="button" class="cancelbtn"> Prekliči</button> Že obstoječ <a href="/prijava"> uporabnik? </a>
 
     </div>
@@ -66,15 +66,11 @@ h1 {
 a {
   color: darkgrey;
 }
-button {
-  background-color: lightgreen;
-  width: auto;
-  color: black;
-  padding: 10px 18px;
-  margin: 10px 5px;
-  border: none;
-  cursor: pointer;
+
+a:hover {
+  color: blue;
 }
+
 input[type=text], input[type=password], input[type=email], input[type=tel], input[type=date]  {
   width: 100%;
   margin: 20px 0px;
@@ -83,14 +79,34 @@ input[type=text], input[type=password], input[type=email], input[type=tel], inpu
   border: 2px black;
   box-sizing: border-box;
 }
+
+button {
+  background-color: #8ee53f;
+  width: auto;
+  color: black;
+  padding: 10px 18px;
+  margin: 10px 5px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
 button:hover {
-  opacity: 0.7;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #b4ee7f;
 }
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
   margin: 10px 5px;
-  background-color: lightcoral;
+  background-color: #e85454;
+  border-radius: 10px;
+}
+
+.cancelbtn:hover {
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px #C4464b;
 }
 
 .form_container {

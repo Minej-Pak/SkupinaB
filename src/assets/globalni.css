@@ -14,7 +14,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-li, a, button {
+li, a {
     font-weight: 500;
     font-size: 16px;
     color: #edf0f1;
@@ -49,18 +49,5 @@ header {
     color: #0088a9;
 }
 
-.gumba button {
-    margin-left: 20px;
-    padding: 9px 25px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    background-color: rgba(0, 136, 169, 1);
-}
-
-.gumb button:hover {
-    background-color: rgba(0, 136, 169, 0.8);
-}
 
 

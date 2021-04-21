@@ -4,6 +4,7 @@ import prijava from '@/components/prijava.vue'
 import registracija from '@/components/registracija.vue'
 import cart from '@/views/Cart.vue'
 import about from '@/components/About.vue'
+import uspesnaRegistracija from "@/components/uspesnaRegistracija";
 
 const routes = [
     { path: '/', component: home, name:'home' },
@@ -11,6 +12,7 @@ const routes = [
     { path: '/registracija', component: registracija, name: 'registracija' },
     { path: '/cart', component: cart, name: 'cart' },
     { path: '/about', component: about, name: 'about'},
+    { path: '/uspesnaRegistracija', component: uspesnaRegistracija, name: 'uspesnaRegistracija'},
 ]
 
 const router = createRouter({
