@@ -38,7 +38,7 @@ export default {
       email: '',
       password: '',
       password_confirm: '',
-      kosarice: []
+      vsaNaročila: [],
     }
   },
   methods: {
@@ -48,7 +48,7 @@ export default {
         email: this.email,
         password: this.password,
         password_confirm: this.password_confirm,
-        kosarice: this.kosarice
+        vsaNaročila: this.vsaNaročila
       };
       preveriUporabnika(data)
     },
