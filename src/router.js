@@ -1,9 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import home from '@/views/Home.vue'
-import prijava from '@/components/prijava.vue'
-import registracija from '@/components/registracija.vue'
+import prijava from '@/views/prijava.vue'
+import registracija from '@/views/registracija.vue'
 import cart from '@/views/Cart.vue'
-import about from '@/components/About.vue'
+import about from '@/views/About.vue'
 import uspesnaRegistracija from "@/components/uspesnaRegistracija";
 
 const routes = [
