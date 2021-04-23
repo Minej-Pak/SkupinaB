@@ -37,6 +37,7 @@ export default {
     odjavi() {
       localStorage.removeItem("vpisanUporabnik");
       location.reload();
+      window.location.href = "/";
     }
   },
   data(){
