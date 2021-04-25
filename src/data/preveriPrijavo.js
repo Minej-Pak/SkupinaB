@@ -9,9 +9,9 @@ export default function preveriVpisanega(data) {
             if (data.username === uporabniki[i].username &&data.email === uporabniki[i].email && data.password === uporabniki[i].password) {
                 vpisanUporabnik = data;
                 uporabnikVpisan = true;
-                return true;
+                break;
             } else {
-                alert("Vnešeni podatki so nepravilni.")
+                console.log("Vnešeni podatki so nepravilni.")
             }
         }
     }

@@ -19,7 +19,7 @@ export default function shraniUporabnika(data) {
                 posodobiLocalStorage(seznamUporabnikov)
                 window.location.href = "/uspesnaRegistracija";
             }
-            return true;
         }
     }
+    return true;
 }

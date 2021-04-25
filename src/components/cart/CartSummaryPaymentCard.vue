@@ -6,6 +6,9 @@
 </template>
 
 <script>
+function posodobiLocalStorage(vpisano){
+  localStorage.setItem("uporabnikZgodovina", JSON.stringify(vpisano));
+}
   export default {
     computed: {
       cart_total() {
@@ -13,23 +16,25 @@
       }
     },
     methods: {
-      dodajKosarico() {
-        let trenutnaKosarica = localStorage.getItem("cart");
-        let uporabnik = JSON.parse(localStorage.getItem('data'));
-        let vpisanUporabnik = JSON.parse(localStorage.getItem('vpisanUporabnik'));
-        for (let y = 0; y <= uporabnik.length; y++) {
-          for (let i = -1; i <= uporabnik.length; i++) {
-            if (uporabnik[y].username == vpisanUporabnik.username && trenutnaKosarica.length != 2) {
-              uporabnik[y].vsaNaročila.push(trenutnaKosarica)
-              localStorage.setItem("data", JSON.stringify(uporabnik))
-              return true;
-            } else {
-              console.log("Uporabnik ni najden ali je košarica prazna.")
-              return true;
-            }
+      dodajKosarico(){
+        let vpisano = [];
+        let trenutnaKosarica = JSON.parse(localStorage.getItem('cart'));
+        let uporabnikZgodovina = JSON.parse(localStorage.getItem('uporabnikZgodovina'));
+        if(uporabnikZgodovina == null){
+          for(let i = 0; i < trenutnaKosarica.length; i++) {
+            vpisano.push(trenutnaKosarica[i])
           }
+          posodobiLocalStorage(vpisano)
+        }else {
+          for(let i = 0; i < trenutnaKosarica.length; i++){
+            uporabnikZgodovina.push(trenutnaKosarica[i])
+          }
+          posodobiLocalStorage(uporabnikZgodovina)
         }
-      },
+        console.log(uporabnikZgodovina)
+        localStorage.removeItem("cart");
+        location.reload();
+      }
     }
   }
 </script>

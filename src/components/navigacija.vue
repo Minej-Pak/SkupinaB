@@ -9,6 +9,7 @@
           <ul class="nav_links">
               <li><router-link :to="{ name:'home'} ">Domov</router-link></li>
               <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'cart'}">Kosarica</router-link></li>
+              <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'kosaricaUporabnika'}">Zgodovina kosarice</router-link></li>
               <li><router-link :to="{ name:'about'}">O Podjetju</router-link></li>
           </ul>
       </nav>

@@ -6,7 +6,7 @@ function updateLocalStorage(cart) {
 
 export default createStore({
     state:{
-cart: []
+cart: [],
     },
 getters:{
         productQuantity: state => product =>
