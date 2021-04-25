@@ -11,6 +11,7 @@
               <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'cart'}">Kosarica</router-link></li>
               <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'kosaricaUporabnika'}">Zgodovina kosarice</router-link></li>
               <li><router-link :to="{ name:'about'}">O Podjetju</router-link></li>
+              <li><router-link v-if="jeAdmin" :to="{ name:'seznamUporabnikov'}">Seznam Uporabnikov</router-link></li>
           </ul>
       </nav>
       <span v-if="uporabnikPrijavljen">{{infoPrijavljenega}}</span>
@@ -32,6 +33,7 @@ export default {
       this.uporabnikOdjavlen = false;
       var prijavljen = JSON.parse(localStorage.getItem("vpisanUporabnik"));
       this.infoPrijavljenega += prijavljen.username;
+      this.jeAdmin = prijavljen.jeAdmin;
     }
   },
   methods: {
@@ -45,7 +47,8 @@ export default {
     return {
       infoPrijavljenega : "Trenutno prijavljen uporabnik: ",
       uporabnikPrijavljen: false,
-      uporabnikOdjavlen: true
+      uporabnikOdjavlen: true,
+      jeAdmin: false,
     }
   }
 }

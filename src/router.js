@@ -6,6 +6,7 @@ import cart from '@/views/Cart.vue'
 import about from '@/views/About.vue'
 import uspesnaRegistracija from "@/components/uspesnaRegistracija";
 import kosaricaUporabnika from "@/views/kosaricaUporabnika";
+import seznamUporabnikov from "@/components/admin/seznamUporabnikov";
 
 const routes = [
     { path: '/', component: home, name:'home' },
@@ -15,6 +16,7 @@ const routes = [
     { path: '/about', component: about, name: 'about'},
     { path: '/uspesnaRegistracija', component: uspesnaRegistracija, name: 'uspesnaRegistracija'},
     { path: '/kosaricaUporabnika', component: kosaricaUporabnika, name: 'kosaricaUporabnika'},
+    { path: '/seznamUporabnikov', component: seznamUporabnikov, name: 'seznamUporabnikov'},
 ]
 
 const router = createRouter({

@@ -31,6 +31,7 @@ export default {
       username: '',
       email: '',
       password: '',
+      jeAdmin: false,
     }
   },
   methods: {
@@ -39,6 +40,7 @@ export default {
         username: this.username,
         email: this.email,
         password: this.password,
+        jeAdmin: this.jeAdmin,
       };
       preveriVpisanega(data)
     },

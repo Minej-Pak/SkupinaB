@@ -16,7 +16,13 @@ export default function preveriVpisanega(data) {
         }
     }
     if(uporabnikVpisan) {
-        localStorage.setItem("vpisanUporabnik", JSON.stringify(vpisanUporabnik));
-        window.location.href = "/";
+        if (vpisanUporabnik.username == "admin") {
+            vpisanUporabnik.jeAdmin = true;
+            localStorage.setItem("vpisanUporabnik", JSON.stringify(vpisanUporabnik));
+            window.location.href = "/";
+        } else {
+            localStorage.setItem("vpisanUporabnik", JSON.stringify(vpisanUporabnik));
+            window.location.href = "/";
+        }
     }
 }
