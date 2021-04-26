@@ -7,10 +7,10 @@
       <img class="logo" src='@/assets/logo.png' alt="logotip">
       <nav>
           <ul class="nav_links">
-              <li><router-link :to="{ name:'home'} ">Domov</router-link></li>
-              <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'cart'}">Kosarica</router-link></li>
+              <li><router-link  v-if="!jeAdmin" :to="{ name:'home'} ">Domov</router-link></li>
+              <li><router-link v-if="uporabnikPrijavljen && !jeAdmin" :to="{ name:'cart'}">Kosarica</router-link></li>
               <li><router-link v-if="uporabnikPrijavljen" :to="{ name:'kosaricaUporabnika'}">Zgodovina kosarice</router-link></li>
-              <li><router-link :to="{ name:'about'}">O Podjetju</router-link></li>
+              <li><router-link v-if="!jeAdmin"  :to="{ name:'about'}">O Podjetju</router-link></li>
               <li><router-link v-if="jeAdmin" :to="{ name:'seznamUporabnikov'}">Seznam Uporabnikov</router-link></li>
           </ul>
       </nav>
@@ -19,7 +19,8 @@
         <div v-if="uporabnikPrijavljen"><button class="odjava-btn" v-on:click="odjavi">Odjavi se</button></div>
         <button v-if="uporabnikOdjavlen" class="login-btn" onclick="location.href='/prijava';">Prijava</button>
         <button v-if="uporabnikOdjavlen" class="register-btn" onclick="location.href='/registracija';">Registracija</button>
-        <button @click="clearStorage" class="login-btn">Ščisti storage</button>
+        <button @click="clearStorage" class="login-btn">Ščisti zgodovino kosarice</button>
+        <button @click="clearUsers" class="login-btn">Ščisti uporabnike</button>
       </div>
     </header>
   </body>
@@ -45,7 +46,10 @@ export default {
     },
     clearStorage() {
       localStorage.removeItem("uporabnikZgodovina");
-    }
+    },
+    clearUsers() {
+      localStorage.removeItem("data");
+    },
   },
   data(){
     return {

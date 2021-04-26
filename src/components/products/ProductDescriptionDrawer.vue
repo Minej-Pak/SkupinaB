@@ -14,10 +14,11 @@
           <h3>In Cart</h3>
           <h4>{{ product_total }}</h4>
         </div>
+        <h5 v-if="!product.state">Product unavailable</h5>
 
         <div class="button-container">
-           <button v-if="uporabnikPrijavljen" class="remove" @click="removeFromCart()">Remove</button>
-           <button v-if="uporabnikPrijavljen" class="add" @click="addToCart()">Add</button>
+           <button v-if="uporabnikPrijavljen && product.state" class="remove" @click="removeFromCart()">Remove</button>
+           <button v-if="uporabnikPrijavljen && product.state" class="add" @click="addToCart()">Add</button>
         </div>
       </div>
   </div>
@@ -124,6 +125,11 @@ export default {
       cursor: pointer;
     }
   }
+}
+
+h5{
+  color:red;
+  font-size: 20px;
 }
 
 @media (min-width: 500px) {

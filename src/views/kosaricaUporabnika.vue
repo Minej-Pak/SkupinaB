@@ -1,6 +1,8 @@
 <template>
     <h1>Zgodovina kosarice</h1>
-  <div v-for="items in prikazano" :key="items"><br>{{items.narocilo}}{{items.name}}</div>
+  <div
+      v-for="items in prikazano" :key="items"><br>{{items.narocilo}}{{items.name}} {{items.price}}
+  </div>
 </template>
 
 <script>
@@ -13,8 +15,8 @@ export default {
 }
 </script>
 
-<style>
-h1 {
+<style scoped>
+h1, div {
   text-align: center;
   color:whitesmoke;
 }
