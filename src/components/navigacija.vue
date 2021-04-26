@@ -19,6 +19,7 @@
         <div v-if="uporabnikPrijavljen"><button class="odjava-btn" v-on:click="odjavi">Odjavi se</button></div>
         <button v-if="uporabnikOdjavlen" class="login-btn" onclick="location.href='/prijava';">Prijava</button>
         <button v-if="uporabnikOdjavlen" class="register-btn" onclick="location.href='/registracija';">Registracija</button>
+        <button @click="clearStorage" class="login-btn">Ščisti storage</button>
       </div>
     </header>
   </body>
@@ -41,6 +42,9 @@ export default {
       localStorage.removeItem("vpisanUporabnik");
       location.reload();
       window.location.href = "/";
+    },
+    clearStorage() {
+      localStorage.removeItem("uporabnikZgodovina");
     }
   },
   data(){

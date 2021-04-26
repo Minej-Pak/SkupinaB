@@ -17,8 +17,6 @@
       <input type="password" v-model="password_confirm"  placeholder="Ponovno vnesi geslo" required>
 
       <button type="submit">Registriraj me</button>
-
-      <button @click="clearStorage" type="submit">Ščisti storage</button>
       <button  onclick="location.href='/' " type="button" class="cancelbtn"> Prekliči</button> Že obstoječ <a href="/prijava"> uporabnik? </a>
 
     </div>
@@ -50,9 +48,6 @@ export default {
       };
       preveriUporabnika(data)
     },
-    clearStorage() {
-      localStorage.clear();
-    }
   }
 }
 </script>

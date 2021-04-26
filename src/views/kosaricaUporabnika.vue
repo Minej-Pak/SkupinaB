@@ -1,6 +1,6 @@
 <template>
     <h1>Zgodovina kosarice</h1>
-  <div v-for="items in prikazano" :key="items">{{items.username}}{{items.name}}</div>
+  <div v-for="items in prikazano" :key="items"><br>{{items.narocilo}}{{items.name}}</div>
 </template>
 
 <script>
