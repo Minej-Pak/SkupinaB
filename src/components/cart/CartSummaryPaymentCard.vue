@@ -11,11 +11,6 @@ function posodobiLocalStorage(vpisano){
 }
 
   export default {
-  data(){
-    return{
-      stevec: 1,
-    }
-  },
     computed: {
       cart_total() {
         return this.$store.getters.cartTotal
@@ -24,7 +19,7 @@ function posodobiLocalStorage(vpisano){
     methods: {
       dodajKosarico(){
         let vpisano = [];
-        let narocilo = {narocilo : "Narocilo", username: "", id: 0, prikazanId: 0};
+        let narocilo = {narocilo : "Narocilo:", username: "", id: 0, prikazanId: 0};
         let trenutnaKosarica = JSON.parse(localStorage.getItem('cart'));
         let uporabnikZgodovina = JSON.parse(localStorage.getItem('uporabnikZgodovina'));
         let temp = JSON.parse(localStorage.getItem('vpisanUporabnik'));

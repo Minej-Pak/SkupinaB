@@ -2,7 +2,7 @@
   <h1>Pretekla Naročila</h1>
   <div class="card" v-for="items in precisceno" :key="items">
     <ul class="narocilo">{{items.username}} {{items.narocilo}} {{items.prikazanId}}
-      <li>{{items.name}} {{items.price}} {{items.quantity}}</li>
+      <li>{{items.name}} {{items.quantity}}x {{items.price}}€</li>
     </ul>
   </div>
 </template>
