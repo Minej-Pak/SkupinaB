@@ -2,9 +2,9 @@
     <h1>Zgodovina kosarice</h1>
   <input type="text" v-model="id" placeholder="Vnesi id naročila">
   <button type="submit" @click="handleButton">Izbriši naročilo</button>
-     <div class="seznam" v-for="items in prikazano" :key="items">
+     <div class="card" v-for="items in prikazano" :key="items">
        <ul class="narocilo">{{items.username}} {{items.narocilo}} {{items.prikazanId}}
-         <li>{{items.name}} {{items.price}} {{items.quantity}}</li><br>
+         <li>{{items.name}}{{items.price}} {{items.quantity}}</li><br>
        </ul>
      </div>
 </template>
@@ -42,15 +42,16 @@ export default {
 </script>
 
 <style scoped>
-h1, div {
+h1 {
   text-align: center;
   color:whitesmoke;
 }
-ul {
+ul, li {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
   text-align: center;
-  list-style-type: circle;
+  list-style-type: none;
+  color: black;
 }
 input[type=text]  {
   margin-left: 43%;
@@ -71,6 +72,20 @@ button:hover {
 .narocilo{
   font-size: 25px;
   color:red;
+}
+
+div {
+  margin-left: 41%;
+  margin-top: 20px;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px gray;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
 }
 
 </style>

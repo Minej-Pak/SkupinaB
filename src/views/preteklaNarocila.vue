@@ -1,8 +1,8 @@
 <template>
   <h1>Pretekla Naročila</h1>
-  <div class="seznam" v-for="items in precisceno" :key="items">
+  <div class="card" v-for="items in precisceno" :key="items">
     <ul class="narocilo">{{items.username}} {{items.narocilo}} {{items.prikazanId}}
-      <li>{{items.name}} {{items.price}} {{items.quantity}}</li><br>
+      <li>{{items.name}} {{items.price}} {{items.quantity}}</li>
     </ul>
   </div>
 </template>
@@ -18,19 +18,28 @@ export default {
 </script>
 
 <style scoped>
-h1, div {
+h1 {
   text-align: center;
   color:whitesmoke;
 }
-ul {
+ul, li {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
   text-align: center;
-  list-style-type: circle;
+  list-style-type: none;
+  color: black;
 }
 .narocilo{
   font-size: 25px;
   color:red;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px gray;
+  width: 300px;
+  margin-left: 41%;
 }
 
 </style>

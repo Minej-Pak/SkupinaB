@@ -19,8 +19,6 @@
         <div v-if="uporabnikPrijavljen"><button class="odjava-btn" v-on:click="odjavi">Odjavi se</button></div>
         <button v-if="uporabnikOdjavlen" class="login-btn" onclick="location.href='/prijava';">Prijava</button>
         <button v-if="uporabnikOdjavlen" class="register-btn" onclick="location.href='/registracija';">Registracija</button>
-        <button @click="clearStorage" class="login-btn">Ščisti zgodovino kosarice</button>
-        <button @click="clearUsers" class="login-btn">Ščisti uporabnike</button>
       </div>
     </header>
   </body>
@@ -45,12 +43,6 @@ export default {
       location.reload();
       window.location.href = "/";
       localStorage.removeItem("zgodovinaKosarice");
-    },
-    clearStorage() {
-      localStorage.removeItem("uporabnikZgodovina");
-    },
-    clearUsers() {
-      localStorage.removeItem("data");
     },
     posodobiTrenutnoKosarico () {
       preciscenaKosaricaUporabnika()

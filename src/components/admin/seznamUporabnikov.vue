@@ -2,8 +2,8 @@
 <h1>Seznam uporabnikov</h1>
   <input type="text" v-model="user" placeholder="Vnesi uporabniško ime">
   <button type="submit" @click="handleButton">Izbriši uporabnika</button>
-  <div
-      v-for="items in seznam" :key="items"><br>Username: {{items.username}}, E-mail: {{items.email}}, Password: {{items.password}}
+  <div class="card"
+      v-for="items in seznam" :key="items">Username: {{items.username}}, E-mail: {{items.email}}, Password: {{items.password}}
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-h1, div {
+h1 {
   text-align: center;
   color:whitesmoke
 }
@@ -49,6 +49,20 @@ button:hover {
   transition: all 0.5s;
   border-radius: 10px;
   box-shadow: 0px 3px 10px #C4464b;
+}
+
+div {
+  margin-left: 35%;
+  margin-top: 20px;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px gray;
+  width: 600px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 </style>
