@@ -20,6 +20,5 @@ export default function preciscenaKosaricaUporabnika() {
     let preciscenoNarocilo = preteklaNarocila.filter(function (el) {
         return el != null;
     });
-    console.log(preciscenoNarocilo)
     localStorage.setItem('zgodovinaKosarice', JSON.stringify(preciscenoNarocilo));
 }

@@ -1,7 +1,6 @@
 <template>
   <head>
   </head>
-
   <body>
     <header>
       <img class="logo" src='@/assets/logo.png' alt="logotip">
@@ -9,7 +8,7 @@
           <ul class="nav_links">
               <li><router-link  v-if="!jeAdmin" :to="{ name:'home'} ">Domov</router-link></li>
               <li><router-link v-if="uporabnikPrijavljen && !jeAdmin" :to="{ name:'cart'}">Kosarica</router-link></li>
-              <li><router-link v-if="uporabnikPrijavljen  && !jeAdmin" :to="{ name:'preteklaNarocila'}">Pretkla Naročila</router-link></li>
+              <li><router-link @click="posodobiTrenutnoKosarico()" v-if="uporabnikPrijavljen  && !jeAdmin" :to="{ name:'preteklaNarocila'}">Pretekla Naročila</router-link></li>
               <li><router-link v-if="jeAdmin" :to="{ name:'kosaricaUporabnika'}">Zgodovina kosarice</router-link></li>
               <li><router-link v-if="!jeAdmin"  :to="{ name:'about'}">O Podjetju</router-link></li>
               <li><router-link v-if="jeAdmin" :to="{ name:'seznamUporabnikov'}">Seznam Uporabnikov</router-link></li>
@@ -28,6 +27,7 @@
 </template>
 
 <script>
+import preciscenaKosaricaUporabnika from "@/data/presciscenaKosarica";
 export default {
   name: 'navigacija',
   created() {
@@ -44,13 +44,16 @@ export default {
       localStorage.removeItem("vpisanUporabnik");
       location.reload();
       window.location.href = "/";
+      localStorage.removeItem("zgodovinaKosarice");
     },
     clearStorage() {
-      localStorage.removeItem("zgodovinaKosarice");
-      // localStorage.removeItem("uporabnikZgodovina");
+      localStorage.removeItem("uporabnikZgodovina");
     },
     clearUsers() {
       localStorage.removeItem("data");
+    },
+    posodobiTrenutnoKosarico () {
+      preciscenaKosaricaUporabnika()
     },
   },
   data(){
