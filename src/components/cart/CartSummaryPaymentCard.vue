@@ -24,18 +24,29 @@ function posodobiLocalStorage(vpisano){
     methods: {
       dodajKosarico(){
         let vpisano = [];
-        let narocilo = {narocilo : "Narocilo"};
+        let narocilo = {narocilo : "Narocilo", username: "", id: 0, prikazanId: 0};
         let trenutnaKosarica = JSON.parse(localStorage.getItem('cart'));
         let uporabnikZgodovina = JSON.parse(localStorage.getItem('uporabnikZgodovina'));
+        let temp = JSON.parse(localStorage.getItem('vpisanUporabnik'));
+        let trenutenUporabnik = temp.username
+        let uniqueId = Math.floor(Math.random() * 100);
         if(uporabnikZgodovina == null){
+          narocilo.prikazanId = uniqueId
+          narocilo.id = uniqueId
+          narocilo.username = trenutenUporabnik
           vpisano.push(narocilo)
           for(let i = 0; i < trenutnaKosarica.length; i++) {
+            trenutnaKosarica[i].id = uniqueId;
             vpisano.push(trenutnaKosarica[i])
           }
           posodobiLocalStorage(vpisano)
         }else {
+          narocilo.prikazanId = uniqueId
+          narocilo.id = uniqueId
+          narocilo.username = trenutenUporabnik
           uporabnikZgodovina.push(narocilo)
           for(let i = 0; i < trenutnaKosarica.length; i++){
+            trenutnaKosarica[i].id = uniqueId;
             uporabnikZgodovina.push(trenutnaKosarica[i])
           }
           posodobiLocalStorage(uporabnikZgodovina)
@@ -43,7 +54,7 @@ function posodobiLocalStorage(vpisano){
         console.log(uporabnikZgodovina)
         localStorage.removeItem("cart");
         location.reload();
-      }
+      },
     }
   }
 </script>

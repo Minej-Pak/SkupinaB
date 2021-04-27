@@ -1,7 +1,7 @@
 <template>
 <h1>Seznam uporabnikov</h1>
-  <input type="text" v-model="user" placeholder="Delete User">
-  <button type="submit" @click="handleButton">Click my ass</button>
+  <input type="text" v-model="user" placeholder="Vnesi uporabniško ime">
+  <button type="submit" @click="handleButton">Izbriši uporabnika</button>
   <div
       v-for="items in seznam" :key="items"><br>Username: {{items.username}}, E-mail: {{items.email}}, Password: {{items.password}}
   </div>
