@@ -1,5 +1,4 @@
-import preciscenaKosaricaUporabnika from '@/views/preteklaNarocila'
-
+import preciscenaKosaricaUporabnika from "@/data/presciscenaKosarica";
 var vpisanUporabnik = [];
 var uporabnikVpisan = false;
 export default function preveriVpisanega(data) {
