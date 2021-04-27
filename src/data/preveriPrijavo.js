@@ -1,3 +1,5 @@
+import preciscenaKosaricaUporabnika from '@/views/preteklaNarocila'
+
 var vpisanUporabnik = [];
 var uporabnikVpisan = false;
 export default function preveriVpisanega(data) {
@@ -23,6 +25,7 @@ export default function preveriVpisanega(data) {
         } else {
             localStorage.setItem("vpisanUporabnik", JSON.stringify(vpisanUporabnik));
             window.location.href = "/";
+            preciscenaKosaricaUporabnika();
         }
     }
 }

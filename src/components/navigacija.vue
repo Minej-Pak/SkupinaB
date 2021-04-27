@@ -46,7 +46,8 @@ export default {
       window.location.href = "/";
     },
     clearStorage() {
-      localStorage.removeItem("uporabnikZgodovina");
+      localStorage.removeItem("zgodovinaKosarice");
+      // localStorage.removeItem("uporabnikZgodovina");
     },
     clearUsers() {
       localStorage.removeItem("data");
