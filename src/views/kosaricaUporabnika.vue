@@ -2,9 +2,11 @@
     <h1>Zgodovina kosarice</h1>
   <input type="text" v-model="id" placeholder="Vnesi id naročila">
   <button type="submit" @click="handleButton">Izbriši naročilo</button>
-     <ul>
-       <li v-for="items in prikazano" :key="items">{{items.username}}{{items.narocilo}} {{items.prikazanId}}<br>{{items.name}}</li>
-     </ul>
+     <div class="seznam" v-for="items in prikazano" :key="items">
+       <ul class="narocilo">{{items.username}} {{items.narocilo}} {{items.prikazanId}}
+         <li>{{items.name}} {{items.price}} {{items.quantity}}</li><br>
+       </ul>
+     </div>
 </template>
 
 <script>
@@ -13,7 +15,7 @@ export default {
     return {
       vpisanUporabnik: JSON.parse(localStorage.getItem('vpisanUporabnik')),
       prikazano: JSON.parse(localStorage.getItem('uporabnikZgodovina')),
-      id: ''
+      id: '',
     }
   },
   methods: {
@@ -33,7 +35,7 @@ export default {
         }
       }
       this.prikazano.splice(index ,kolikoIzbrisat);
-      //localStorage.setItem('uporabnikZgodovina', JSON.stringify(this.prikazano));
+      localStorage.setItem('uporabnikZgodovina', JSON.stringify(this.prikazano));
     }
   }
 }
@@ -45,10 +47,10 @@ h1, div {
   color:whitesmoke;
 }
 ul {
-  list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
   text-align: center;
+  list-style-type: circle;
 }
 input[type=text]  {
   margin-left: 43%;
@@ -66,5 +68,10 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0px 3px 10px #C4464b;
 }
+.narocilo{
+  font-size: 25px;
+  color:red;
+}
+
 </style>
 
